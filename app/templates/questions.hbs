@@ -1,0 +1,39 @@
+<div class="header jumbotron">
+<h1 class="page-header text-center">MindScape:</h1>
+<h2 class="text-center">  Bringing the top minds together to answer some of lifes most challenging questions.</h2>
+</div>
+
+<div class="newquestions">
+  {{#link-to 'new-question'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Question</button>{{/link-to}}
+  <div id="addModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Question</h4>
+        </div>
+        <div class="modal-body">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="questions">
+  <h1>Current questions needing answering:</h1>
+  {{#each}}
+    {{#link-to 'question' this.id}}<div class="row clearfix well">
+      <div class="col-md-2 col-md-offset-1">
+        <img src="img/mind.jpg" alt="a picture of a brain" />
+      </div>
+      <div class="col-md-4 ">
+      <h2>{{author}} </h2>
+      </div>
+      <div class="col-md-4">
+        <h3>Question: {{question}} </h3>
+      </div>
+    </div>
+    {{/link-to}}
+  {{/each}}
+</div>

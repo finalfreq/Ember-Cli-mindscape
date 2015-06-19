@@ -1,0 +1,11 @@
+<form>
+<div class="form-group">
+<label for="name">Name</label>
+{{input id="name" class="form-control" value=name}}
+</div>
+<div class="form-group">
+<label for="body">Answer</label>
+{{textarea id="body" class="form-control" rows="6" value=body}}
+</div>
+<button type="submit" class="btn btn-success" {{action 'save'}}>Add Answer</button>
+</form>

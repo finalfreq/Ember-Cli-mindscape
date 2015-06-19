@@ -1,0 +1,68 @@
+<div class="question jumbotron">
+<h1 class="page-header text-center">{{author}}'s Question:</h1>
+<h2 class="text-center">{{question}}</h2>
+<p class="lead">{{description}}</p>
+<button type="submit" class="btn btn-block btn-warning" {{action 'edit'}}>Edit Question</button>
+<button type="submit" class="btn btn-block btn-danger" {{action 'delete'}}>Delete Question</button>
+{{#link-to 'new-answer'}}<button class="btn btn-success btn-block" {{action 'newAnswer'}}> Add Answer </button> {{/link-to}}
+</div>
+
+<div id="editModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Question</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="author">Name</label>
+            {{input id="author" class="form-control" value=author}}
+          </div>
+          <div class="form-group">
+            <label for="question">Question</label>
+            {{input id="question" class="form-control" value=question}}
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            {{textarea id="description" class="form-control" rows="6" value=description}}
+          </div>
+          <button type="submit" class="btn btn-success btn-block" data-dismiss="modal" {{action 'save'}}>Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Answer</h4>
+      </div>
+      <div class="modal-body">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="answers">
+  {{#each answer in answers}}
+  <div class="row clearfix well">
+    <div class="col-md-3">
+      <img src="img/answer.jpg" alt="a picture of telepathic people" />
+      <button type="submit" class="btn btn-danger" {{action 'deleteAnswer' answer}}>Remove</button>
+    </div>
+    <div class="col-md-2">
+      <h2>{{answer.name}} </h2>
+    </div>
+    <div class="col-md-6 col-md-offset-1">
+      <h2>Answer: {{answer.body}} </h2>
+    </div>
+  </div>
+  {{/each}}
+</div>
