@@ -1,7 +1,6 @@
-# Code-review
+# MindScape
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+MindScape is a tool for the community. It is an open format forum board where users can ask a question, and then another user can post a response to those questions.
 
 ## Prerequisites
 
@@ -19,35 +18,28 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* `bower install bootstrap`
+* `ember install emberfire`
+* `ember install ember-cli-bootswatch`
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+From the main page you can see any questions that have been posted, add a new question, go to the newly created question page and create answers for those questions. There is also built in functionality to be able to edit and delete answers as well as delete questions.
 
-Make use of the many generators for code, try `ember help generate` for more details
+### Bug reports
 
-### Running Tests
+If you discover any bugs, feel free to create an issue on GitHub. Please add as much information as
+possible to help us fixing the possible bug. We also encourage you to help even more by forking and
+sending us a pull request.
 
-* `ember test`
-* `ember test --server`
 
-### Building
+## Maintainers
+1. James Williams (https://github.com/finalfreq)
 
-* `ember build` (development)
-* `ember build --environment production` (production)
 
-### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+## License
+MIT License. Copyright 2015

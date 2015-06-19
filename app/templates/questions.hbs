@@ -9,14 +9,17 @@
   {{#each model as |question|}}
     {{#link-to 'question' question.id}}<div class="row clearfix well">
       <div class="col-md-2 col-md-offset-1">
-        <img src="img/mind.jpg" alt="a picture of a brain" />
+        <img src="assets/image/mind.jpg" alt="a picture of a brain" />
       </div>
       <div class="col-md-4 ">
-      <h2>{{author}} </h2>
+      <h4 style="font-weight:bold; color:rgb(88, 117, 201);">{{question.author}} </h4>
       </div>
       <div class="col-md-4">
-        <h3>Question: {{question.question}} </h3>
+        <p class="lead">{{question.question}} </p>
       </div>
+      <footer style="margin-bottom:0px;">
+        <h6 style="float:right; margin-bottom:0px;">  {{format-date question.date}} </h6>
+      </footer>
     </div>
     {{/link-to}}
   {{/each}}
