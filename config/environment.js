@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'code-review',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://mindscape.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
