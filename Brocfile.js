@@ -18,4 +18,11 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+/* global require, module */
+
+
+app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+app.import('bower_components/moment/moment.js');
+
+
 module.exports = app.toTree();

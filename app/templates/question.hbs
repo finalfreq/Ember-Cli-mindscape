@@ -1,7 +1,7 @@
 <div class="question jumbotron">
-<h1 class="page-header text-center">{{author}}'s Question:</h1>
-<h2 class="text-center">{{question}}</h2>
-<p class="lead">{{description}}</p>
+<h1 class="page-header text-center">{{model.author}}'s Question:</h1>
+<h2 class="text-center">{{model.question}}</h2>
+<p class="lead">{{model.description}}</p>
 <button type="submit" class="btn btn-block btn-warning" {{action 'edit'}}>Edit Question</button>
 <button type="submit" class="btn btn-block btn-danger" {{action 'delete'}}>Delete Question</button>
 {{#link-to 'new-answer'}}<button class="btn btn-success btn-block" {{action 'newAnswer'}}> Add Answer </button> {{/link-to}}
@@ -51,7 +51,7 @@
 </div>
 
 <div class="answers">
-  {{#each answer in answers}}
+  {{#each model.answers as |answer|}}
   <div class="row clearfix well">
     <div class="col-md-3">
       <img src="img/answer.jpg" alt="a picture of telepathic people" />

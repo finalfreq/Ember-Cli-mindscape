@@ -3,6 +3,29 @@
 <h2 class="text-center">  Bringing the top minds together to answer some of lifes most challenging questions.</h2>
 </div>
 
+{{#if model}}
+<div class="questions">
+  <h1>Current questions needing answering:</h1>
+  {{#each model as |question|}}
+    {{#link-to 'question' question.id}}<div class="row clearfix well">
+      <div class="col-md-2 col-md-offset-1">
+        <img src="img/mind.jpg" alt="a picture of a brain" />
+      </div>
+      <div class="col-md-4 ">
+      <h2>{{author}} </h2>
+      </div>
+      <div class="col-md-4">
+        <h3>Question: {{question.question}} </h3>
+      </div>
+    </div>
+    {{/link-to}}
+  {{/each}}
+</div>
+
+{{else}}
+no questions yet
+
+{{/if}}
 <div class="newquestions">
   {{#link-to 'new-question'}}<button type="submit" class="btn btn-block btn-success" {{action 'add'}}>Add Question</button>{{/link-to}}
   <div id="addModal" class="modal fade" role="dialog">
@@ -18,22 +41,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="questions">
-  <h1>Current questions needing answering:</h1>
-  {{#each}}
-    {{#link-to 'question' this.id}}<div class="row clearfix well">
-      <div class="col-md-2 col-md-offset-1">
-        <img src="img/mind.jpg" alt="a picture of a brain" />
-      </div>
-      <div class="col-md-4 ">
-      <h2>{{author}} </h2>
-      </div>
-      <div class="col-md-4">
-        <h3>Question: {{question}} </h3>
-      </div>
-    </div>
-    {{/link-to}}
-  {{/each}}
 </div>
