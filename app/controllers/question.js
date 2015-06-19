@@ -12,12 +12,12 @@ export default Ember.ObjectController.extend({
         var answer = question.get('answers'),
           list = answer.toArray();
 
+        question.destroyRecord();
         list.forEach(function(answer){
           answer.destroyRecord();
           question.save();
         });
 
-        question.destroyRecord();
         this.transitionToRoute('questions');
       }
     },

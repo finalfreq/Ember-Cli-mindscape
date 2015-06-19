@@ -55,14 +55,17 @@
   <div class="row clearfix well">
     <div class="col-md-3">
       <img src="assets/image/answer.jpg" alt="a picture of telepathic people" />
-      <button type="submit" class="btn btn-danger" {{action 'deleteAnswer' answer}}>Remove</button>
     </div>
     <div class="col-md-2">
-      <h2>{{answer.name}} </h2>
+      <h4 style="font-weight:bold; color:rgb(88, 117, 201);">{{answer.name}} </h4>
     </div>
     <div class="col-md-6 col-md-offset-1">
-      <h2>Answer: {{answer.body}} </h2>
+      <p class="lead">Answer: {{answer.body}} </p>
     </div>
+    <footer style="margin-bottom:0px;">
+      <h6 style="float:right; margin-bottom:0px;">  {{format-date question.date}} </h6>
+      <button style="float:left; margin-bottom:0px;" type="submit" class="btn btn-danger btn-xs" {{action 'deleteAnswer' answer}}>X</button>
+    </footer>
   </div>
   {{/each}}
 </div>
